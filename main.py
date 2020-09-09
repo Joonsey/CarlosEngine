@@ -4,7 +4,9 @@ from dice import dice
 from story import story, story_loop
 story_dict = ["cave", "magic", "flying", "pirate", "undead"]
 
-
+d4 = dice(4)
+d6 = dice(6)
+d12 = dice(12)
 protagonist = character(name="Loba", age=17, gender="female")
 antagonist = character(name="Chloe", age=22, gender="female")
 antagonist.makeHostile()
@@ -35,8 +37,9 @@ def IgnoreAndLook():
     protagonist.inventory.append("frying pan")
 
 def HidingCloset():
-    n = protagonist.statCheck("constitution", 4)
+    n = protagonist.statCheck("constitution", d6.roll())
     print(f"{protagonist.pronoun()} decides to run to the closet and attempt to hide!" + "\n" + "---[Constitution check!]---")
     print("---[Success!]---" if n else "---[Failed!]---")
     print(f"{protagonist.pronoun()} reaches the closet successfull and is filled with contentment" if n else f"{protagonist.name} falls to the floor and fucking dies.")
+
 main()
