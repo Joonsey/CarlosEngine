@@ -15,6 +15,7 @@ class character:
         self.hastats = False
         self.inventory = []
         self.isFriendly = True
+        self.generateStats()
 
     def pronoun(self):
         if self.gender.lower() == "male":
