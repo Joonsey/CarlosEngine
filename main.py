@@ -35,6 +35,8 @@ def IgnoreAndLook():
     protagonist.inventory.append("frying pan")
 
 def HidingCloset():
-    print(f"""{protagonist.pronoun()} decides to run to the closet and attempt to hide! ---[Constitution check!]---""")
-    print(f"{protagonist.pronoun()} reaches the closet successfull and is filled with contentment" if protagonist.statCheck("constitution", 4) else f"{protagonist.name} falls to the floor and fucking dies.")
+    n = protagonist.statCheck("constitution", 4)
+    print(f"{protagonist.pronoun()} decides to run to the closet and attempt to hide!" + "\n" + "---[Constitution check!]---")
+    print("---[Success!]---" if n else "---[Failed!]---")
+    print(f"{protagonist.pronoun()} reaches the closet successfull and is filled with contentment" if n else f"{protagonist.name} falls to the floor and fucking dies.")
 main()
