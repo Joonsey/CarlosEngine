@@ -1,4 +1,5 @@
 import random
+INVENTORY_PATH = "inventory"
 STATWEIGHT = 12
 class character: 
     def __init__(self, name="undefined", age="undefined", gender="undefined", race="undefined"):
@@ -15,6 +16,7 @@ class character:
         self.hastats = False
         self.inventory = []
         self.isFriendly = True
+        self.pron = self.pronoun()
         self.generateStats()
 
     def pronoun(self):
@@ -49,7 +51,10 @@ class character:
 
     def removeItem(self, item):
         if item in self.inventory:
-            return self.inventory.remove(item)
+            f = open(INVENTORY_PATH, "w")
+            f.remove(item)
+            f.close()
+            self.inventory.remove(item)
         else:
             print("You don't currently have that item!")
 
@@ -87,3 +92,18 @@ class character:
 
     def isItFriendly(self):
         return self.isFriendly
+
+    def expandInv(self, args):
+        if len(self.inventory) == 0:
+            f = open(INVENTORY_PATH, "w")
+            args.split(" ")
+            f.write(args+", ")
+            f.close
+            self.inventory.append(args)
+        else:
+            f = open(INVENTORY_PATH, "a")
+            f.write(args)
+            f.close
+            self.inventory.append(args)
+
+
