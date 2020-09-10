@@ -1,5 +1,5 @@
 import random
-class dice:
+class dice: # basic dice that rolls a defined amount of times and gives a random output between 0 and defined amount
     def __init__(self, x):
         self.x = x
 

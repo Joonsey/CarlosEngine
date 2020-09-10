@@ -2,7 +2,9 @@ import random
 INVENTORY_PATH = "inventory"
 STATWEIGHT = 12
 class character: 
+    # initiates a character with name, age, gender, and race. None of which needs to be specified
     def __init__(self, name="undefined", age="undefined", gender="undefined", race="undefined"):
+        # also has alot more stats and properties than can be called at any time
         self.name = name
         self.age = age
         self.gender = gender
@@ -20,14 +22,17 @@ class character:
         self.generateStats()
 
     def pronoun(self):
-        if self.gender.lower() == "male":
+        # This function  calls the apriopriate name pronoun for the character. Use self.noun to call this function
+        if self.gender.lower() == "male" or "m":
             return "he"
-        elif self.gender.lower() == "female":
+        elif self.gender.lower() == "female" or "f":
             return "she"
         else: 
             return "it"
 
+
     def generateStats(self): 
+        # generates stats for the character, this gets called when character is made
         self.strength = random.randint(0,STATWEIGHT)
         self.constitution = random.randint(0,STATWEIGHT)
         self.dexterity = random.randint(0,STATWEIGHT)
@@ -36,6 +41,8 @@ class character:
         self.HasStats = True
     
     def showStats(self):
+        # call this function to print stats
+        # TODO: make this being called by a command / input
         if self.HasStats:
             print("Your strength is: " + str(self.strength))
             print("Your dexterity is: " + str(self.dexterity))
@@ -47,9 +54,11 @@ class character:
 
 
     def showInventory(self): 
+        # prints your current inventory
         print(f"You currently have: {self.inventory}")
 
     def removeItem(self, item):
+        # removed selected item from inventory, both the file and the list.
         if item in self.inventory:
             f = open(INVENTORY_PATH, "w")
             f.remove(item)
@@ -59,6 +68,7 @@ class character:
             print("You don't currently have that item!")
 
     def statCheck(self, stat, weight): 
+        # check selected stat for for current character and matches it against the weight attribute
         stat = stat.lower()
         if stat == "strength":
             if weight >= self.strength:
@@ -87,13 +97,14 @@ class character:
         
         else: print("invalid input. Please input a proper stat (Strength, Wisdom, Dexterity, Constitution or charisma).")
         
-    def makeHostile(self):
+    def makeHostile(self): # defines that the enemy is hostile
         self.isFriendly = False
 
-    def isItFriendly(self):
+    def isItFriendly(self): # return if enemy is friendly
         return self.isFriendly
 
-    def expandInv(self, args):
+    def expandInv(self, args): # expands the inventory by adding selected item to the character.
+        # if you have no items in your inventory instead of adding item it will recreate and rewrite the file.
         if len(self.inventory) == 0:
             f = open(INVENTORY_PATH, "w")
             args.split(" ")

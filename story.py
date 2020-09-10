@@ -1,5 +1,5 @@
 import random
-class story:
+class story: # TODO VERY WORK IN PROGRESS MORE OR LESS IGNORE THIS STORY CLASS FOR NOW
     def __init__(self, *args):
         self.args = args
         self.storylist = []
@@ -20,8 +20,8 @@ class story:
 
         self.StoryDict = {
         "mainMotive":["neutral good", "neutral evil", "neutral neutral", "chaotic good", "chaotic evil", "chaotic neutral", "Lawfull good", "lawfull evil", "lawfull neutral"],
-        "location":["oslo", "spain", "london", "narnia", "azeroth", "pandora", "mars", "the moon"],
-        "sideCharacter":["none","cat", "dog", "golem", "large rat"]
+        "location":["oslo", "spain", "london", "narnia", "azeroth", "pandora", "mars", "the moon", "SCP"],
+        "sideCharacter":["none","cat", "dog", "golem", "large rat", "SCP-529"]
         }
         
         self.storytheme = ["".join(randomchoice(self.StoryDict, "mainMotive")),
@@ -38,7 +38,10 @@ class story:
         return self.storytheme
 s = story()
 s.embedStory()
-class story_loop:
+class story_loop: # this basically functions as the main component in the game.
+    # where it will run one of 3 functions in the game based on input.
+    # TODO add ability to check inventory at any given time and maybe a rare or custom option? 
+    # TODO also add the ability to see stats
     def __init__(self, outcome1, o2, o3):
         self.ANSWER_A = ["1","A","a"]
         self.ANSWER_B = ["b","2","B"]
