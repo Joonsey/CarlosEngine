@@ -7,7 +7,7 @@ story_dict = ["cave", "magic", "flying", "pirate", "undead"]
 d4 = dice(4)
 d6 = dice(6)
 d12 = dice(12)
-protagonist = character(name="Loba", age=17, gender="female")
+protagonist = character(name=random.choice(["Loba", "Nona", "Susan"]), age=17, gender="female")
 antagonist = character(name="Chloe", age=22, gender="female")
 antagonist.makeHostile()
 
@@ -45,3 +45,4 @@ def HidingCloset():
     print(f"{protagonist.pron} reaches the closet successfull and is filled with contentment" if n else f"{protagonist.name} falls to the floor and fucking dies.")
     
 main()
+

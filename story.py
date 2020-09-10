@@ -29,15 +29,11 @@ class story: # TODO VERY WORK IN PROGRESS MORE OR LESS IGNORE THIS STORY CLASS F
         "".join(randomchoice(self.StoryDict, "sideCharacter"))
         #", ".join(randomchoice(self.StoryDict, "4th category"))
         ]
-        s = open("Storydictionairy.txt","w")
-        s.write(self.StoryDict)
-        s.close()
-        print(self.storytheme)
+
         
     def storyTheme(self):
         return self.storytheme
-s = story()
-s.embedStory()
+
 class story_loop: # this basically functions as the main component in the game.
     # where it will run one of 3 functions in the game based on input.
     # TODO add ability to check inventory at any given time and maybe a rare or custom option? 
