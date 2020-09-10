@@ -29,7 +29,9 @@ class story:
         "".join(randomchoice(self.StoryDict, "sideCharacter"))
         #", ".join(randomchoice(self.StoryDict, "4th category"))
         ]
-        
+        s = open("Storydictionairy.txt","w")
+        s.write(self.StoryDict)
+        s.close()
         print(self.storytheme)
         
     def storyTheme(self):
