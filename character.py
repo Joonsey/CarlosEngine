@@ -20,6 +20,9 @@ class character:
         self.isFriendly = True
         self.pron = self.pronoun()
         self.generateStats()
+    
+    def __str__(self):
+        return f"{self.name} is {self.age} years old, and a {self.race}"" 
 
     def pronoun(self):
         # This function  calls the apriopriate name pronoun for the character. Use self.noun to call this function

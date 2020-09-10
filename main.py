@@ -1,4 +1,4 @@
-import random
+import random, tkinter
 from character import character
 from dice import dice
 from story import story, story_loop
