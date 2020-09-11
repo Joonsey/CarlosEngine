@@ -29,7 +29,7 @@ class story: # TODO VERY WORK IN PROGRESS MORE OR LESS IGNORE THIS STORY CLASS F
         "".join(randomchoice(self.StoryDict, "sideCharacter"))
         #", ".join(randomchoice(self.StoryDict, "4th category"))
         ]
-
+        print(self.storytheme)
         
     def storyTheme(self):
         return self.storytheme
@@ -42,19 +42,26 @@ class story_loop: # this basically functions as the main component in the game.
         self.ANSWER_A = ["1","A","a"]
         self.ANSWER_B = ["b","2","B"]
         self.ANSWER_C = ["C","c","3"]
+        self.INVENTORYKEY = ["i","inv","inventory","items"]
         self.FirstOutcome = outcome1
         self.SecondOutcome = o2
         self.ThirdOutcome = o3
         self.run()
     
     def run(self):
-        n = input(">>>")
+        n = input(">>>").lower()
         if n in self.ANSWER_A:
             self.FirstOutcome()
         elif n in self.ANSWER_B:
             self.SecondOutcome()
         elif n in self.ANSWER_C:
             self.ThirdOutcome()
+        elif n in self.INVENTORYKEY:
+            # protagonist.showInventory()
+            pass
         else:
             print("please enter valid input, A, B or C")
             self.run()
+
+s = story()
+s.embedStory()
