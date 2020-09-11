@@ -121,3 +121,5 @@ class character:
             self.inventory.append(args)
 
 
+if __name__ == "__main__":
+    pass

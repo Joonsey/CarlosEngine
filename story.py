@@ -63,5 +63,6 @@ class story_loop: # this basically functions as the main component in the game.
             print("please enter valid input, A, B or C")
             self.run()
 
-s = story()
-s.embedStory()
+if __name__ == "__main__":
+    s = story()
+    s.embedStory()
