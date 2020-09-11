@@ -1,0 +1,17 @@
+* {
+    background-color: #F333FF;
+}
+
+.nav {
+    color: orange;
+    display: flex;
+    justify-content: flex-end;
+}
+.main {
+    display: grid;
+    grid-template: 6/auto
+}
+.box {
+    grid: auto;
+    justify-content: space-around;
+}

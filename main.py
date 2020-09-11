@@ -44,5 +44,10 @@ def HidingCloset():
     print("---[Success!]---" if n else "---[Failed!]---")
     print(f"{protagonist.pron} reaches the closet successfull and is filled with contentment" if n else f"{protagonist.name} falls to the floor and fucking dies.")
     
-main()
+
+
+
+
+if __name__ == "__main__":
+    main()
 
