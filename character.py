@@ -19,6 +19,7 @@ class character:
         self.inventory = []
         self.isFriendly = True
         self.pron = self.pronoun()
+        self.perpron = self.pronounPerfectum()
         self.generateStats()
     
     def __str__(self):
@@ -33,7 +34,14 @@ class character:
         else: 
             return "it"
 
-
+    def pronounPerfectum(self):
+        # this function calls the apropriate perfectum pronoun
+        if self.gender.lower() == "male" or "m":
+            return "his"
+        elif self.gender.lower() == "female" or "f":
+            return "hers"
+        else:
+            return "it's"
     def generateStats(self): 
         # generates stats for the character, this gets called when character is made
         self.strength = random.randint(0,STATWEIGHT)
